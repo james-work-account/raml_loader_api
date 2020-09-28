@@ -1,0 +1,33 @@
+nino:
+  - text: I1
+  - text: nino
+  - text: "National Insurance number, in the format AA999999A.<br/>For example: TC663795B"
+  - text: String
+  - text: "^((?!(BG|GB|KN|NK|NT|TN|ZZ)|(D|F|I|Q|U|V)[A-Z]|[A-Z](D|F|I|O|Q|U|V))[A-Z]{2})[0-9]{6}[A-D]$"
+  - text: M
+  - text: See <strong>BVRs E1, E8</strong>
+  - text: ""
+
+taxYear:
+  - text: I2
+  - text: taxYear
+  - yellowText: "The tax year to which the data applies, in the format YYYY-YY. If no tax year is supplied, then it will default to the current tax year.<br/>For example: 2017-18"
+  - text: String
+  - text: "YYYY-YY (2017-18)"
+  - text: O
+  - text: See <strong>BVRs E2, E5, E6</strong>
+  - text: "Will default to Current Tax year (ending on the next 05/04/YY)"
+
+typeOfBusiness:
+  - text: I3
+  - text: typeOfBusiness
+  - text: "The type of business the summary calculation is for.<br/>Limited to the following possible values: 
+<ul><li>uk-property-non-fhl</li>
+<li>uk-property-fhl</li></ul>"
+  - text: Enum<br/>String
+  - text: "One of: 
+<ul><li>uk-property-non-fhl</li>
+<li>uk-property-fhl</li></ul>"
+  - text: M
+  - text: See <strong>BVR E3</strong>
+  - text: ""

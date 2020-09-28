@@ -1,0 +1,26 @@
+<h4>Errors</h4>
+
+<table>
+  <thead>
+    <tr>
+      {% with dictionary=value|first %}
+        {% with keys=dictionary.keys %}
+          {% for key in keys %}
+            <th>{{key}}</th>
+          {% endfor %}
+        {% endwith %}
+      {% endwith %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for error in value %}
+      <tr>
+        {% with error_values=error.values %}
+          {% for v in error_values %}
+            <td>{{v}}</td>
+          {% endfor %}
+        {% endwith %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

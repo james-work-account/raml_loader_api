@@ -9,9 +9,10 @@ class Loader(yaml.SafeLoader):
         super(Loader, self).__init__(stream)
 
     def include(self, node):
-        filename = os.path.join(self._root, self.construct_scalar(node))
-        with open(filename, 'r') as f:
-            return yaml.load(f, Loader)
+        filename, part = os.path.join(
+            self._root, "..", self.construct_scalar(node)).rsplit('.', 1)
+        with open("%s.raml" % filename, 'r') as f:
+            return yaml.load(f, Loader)[part]
 
 
 Loader.add_constructor('!include', Loader.include)

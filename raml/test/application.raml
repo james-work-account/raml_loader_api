@@ -1,0 +1,33 @@
+title: Retrieve a UK Property Business Income Source Summary (BISS)
+sections:
+  - Document Control:
+      table:
+        headers:
+          - Version
+          - Status
+          - Change made by
+          - Changes / Comments
+          - User Story Implemented Under
+        row1:
+          - text: v0.1
+          - draft:
+          - text: "@Francis.Wells"
+          - text: Initial Draft of replacement UK Property BISS Endpoint, replacing <i>Get UK Property Business Income Source Summary (BISS)</i>
+          - text: MTDSA-4255<br/>MTDSA-4256
+  - Business Requirements:
+      endpoint_description: This endpoint allows the user to get a running (year-to date) summary of the income and expenditure for a specified UK Property business during a tax year. 
+      table:
+        title: Vendor Supplied
+        headers:
+          - "#"
+          - Field
+          - Description
+          - Data Type
+          - Format
+          - M/O
+          - Validation
+          - Comments
+        row1: !include common.nino
+        row2: !include common.taxYear
+        row3: !include common.typeOfBusiness
+
