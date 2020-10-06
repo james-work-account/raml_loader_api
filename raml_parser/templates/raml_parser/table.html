@@ -1,0 +1,29 @@
+<h4>{{value.title}}</h4>
+<table>
+  <thead>
+    <tr>
+      {% for table_heading in value.headers %}
+        <th>{{table_heading}}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for table in value.items %}
+      {% if table.0 != "headers" %}
+        <tr>
+          {% for row in table.1 %}
+            {% for cell in row.items %}
+              <td class="{% if cell.0 == 'yellowText' %}highlight-yellow{% endif %}">
+                {% if cell.0 == "draft" %}
+                  {% include 'raml_parser/draft.html' %}
+                {% else %}
+                  {{cell.1|safe}}
+                {% endif %}
+              </td>
+            {% endfor %}
+          {% endfor %}
+        </tr>
+      {% endif %}
+    {% endfor %}
+  </tbody>
+</table>

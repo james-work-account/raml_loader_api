@@ -1,0 +1,17 @@
+<h1>{{title}}</h1>
+
+{% for section in sections %}
+  {% for heading, contents in section.items %}
+  <h2>{{heading}}</h2>
+  <hr/>
+    {% for key, value in contents.items %}
+      {% if key == "table" %}
+        {% include 'raml_parser/table.html' %}
+      {% elif key == "endpoint_description" %}
+        {% include 'raml_parser/description.html' %}
+      {% elif key == "errors" %}
+        {% include 'raml_parser/errors.html' %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+{% endfor %}
