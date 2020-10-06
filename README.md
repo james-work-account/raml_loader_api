@@ -5,7 +5,7 @@
 ### Requirements
 
 - Requires python 3
-- Install necessary packages through pip (`pip install -r requirements.txt` or something similar, I'm not very good with Python)
+- Install necessary packages through pip
 
 ### Usage
 
